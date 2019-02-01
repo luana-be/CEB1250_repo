@@ -6,5 +6,7 @@ This repository will contain the implementation of exercises given in the course
 #First codding challenges: https://moodle.concordia.ca/moodle/pluginfile.php/3509424/mod_resource/content/1/CEB%20-%20Big%20Data%20Storage%20Class%201.pdf (slide #25)
 first_codding_challenge.ipynb
 
-#To print it on the brain: https://moodle.concordia.ca/moodle/pluginfile.php/3516538/mod_resource/content/1/Class%202%20slides.pdf (slide #13)
-TABLE_COURSE.sql
+#SQL exercices: https://moodle.concordia.ca/moodle/pluginfile.php/3516538/mod_resource/content/1/Class%202%20slides.pdf (slides #13 and #18)
+COURSE.sql
+EMPLOYEES_SALARIES_TITLES.sql
+
