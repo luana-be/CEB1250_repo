@@ -1,5 +1,13 @@
 -- Write a SQL query to get the third highest salary of an employee from employee_table
+create or replace view highest_salaries as select * from salaries order by salary desc limit 3
+-- to see <who> has the third highest salary:
+select * from employees where emp_no = 
+ (select emp_no from highest_salaries order by salary asc limit 1)
+-- to see <which> one is third highest salary:
+select emp_no, salary from highest_salaries order by salary asc limit 1
+ 
 -- Write a SQL query to find the names of employees that begin with ‘A’
+
 -- What is the difference between ‘HAVING’ CLAUSE and a ‘WHERE’ CLAUSE
 -- List, and explain the elements of an Entities and Relationships model
 -- What are the different categories of SQL statements, what does each group do
