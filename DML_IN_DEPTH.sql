@@ -32,14 +32,19 @@ select first_name, count(*) as amt_of_fei from employees group by first_name whe
 create or replace view even_salaries as select * from salaries where mod(salary,2) = 0 and to_date ='9999-01-01'
 
 create or replace view employees_with_even_salaries as
- select distinct first_name, last_name, employees.emp_no, to_date, salary from employees 
- inner join even_salaries on employees.emp_no=even_salaries.emp_no
+select distinct first_name, last_name, employees.emp_no, to_date, salary 
+from employees inner join even_salaries on employees.emp_no=even_salaries.emp_no
  
-select distinct first_name, last_name, title, salary, titles.emp_no, employees_with_even_salaries.to_date from titles
- inner join employees_with_even_salaries on employees_with_even_salaries.emp_no=titles.emp_no
+select distinct first_name, last_name, title, salary, titles.emp_no, employees_with_even_salaries.to_date 
+from titles inner join employees_with_even_salaries on employees_with_even_salaries.emp_no=titles.emp_no
 
 -- What is wrong with the following query, re-write it making the needed corrections.
 -- SELECT employee.emp_no, AVG(salaries.salary)
 -- FROM employee INNER JOIN salaries AT employee.emp_no = salaries.emp_no
 -- HAVING AVG(salaries.salary) > 10000
 -- GROUP BY employee.emp_no
+
+SELECT employees.emp_no, AVG(salaries.salary)
+FROM employees INNER JOIN salaries ON employees.emp_no = salaries.emp_no
+GROUP BY employees.emp_no
+HAVING AVG(salaries.salary) > 10000
