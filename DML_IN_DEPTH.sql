@@ -10,7 +10,7 @@ select emp_no, salary from highest_salaries order by salary asc limit 1
 select first_name from employees where first_name like 'A%'
 
 -- What is the difference between ‘HAVING’ CLAUSE and a ‘WHERE’ CLAUSE
--- in the following cases, they both return the same content
+-- in the two cases below, they both return the same content
 select first_name from employees where first_name like 'A%'
 select first_name from employees having first_name like 'A%'
 -- however, when using the aggregation operator "group by", only "having" is allowed
