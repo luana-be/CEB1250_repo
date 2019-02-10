@@ -29,6 +29,14 @@ select first_name, count(*) as amt_of_fei from employees group by first_name whe
 -- What is the difference between NULL value, Zero, and Blank space
 
 -- Write a SQL that returns the employee name and title for all employees with even number as actual salary (to_date is 9999-01-01)
+create or replace view even_salaries as select * from salaries where mod(salary,2) = 0 and to_date ='9999-01-01'
+
+create or replace view employees_with_even_salaries as
+ select distinct first_name, last_name, employees.emp_no, to_date, salary from employees 
+ inner join even_salaries on employees.emp_no=even_salaries.emp_no
+ 
+select distinct first_name, last_name, title, salary, titles.emp_no, employees_with_even_salaries.to_date from titles
+ inner join employees_with_even_salaries on employees_with_even_salaries.emp_no=titles.emp_no
 
 -- What is wrong with the following query, re-write it making the needed corrections.
 -- SELECT employee.emp_no, AVG(salaries.salary)
