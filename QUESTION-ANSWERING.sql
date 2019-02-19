@@ -2,6 +2,7 @@
 --create table answer (answer_id int not null, answer longtext not null, primary key (answer_id), question_id int not null, foreign key (question_id) references question(question_id))
 --create table category (category_id int not null, category varchar(100) not null, primary key(category_id))
 --create table question_category (question_id int not null, category_id int not null, foreign key (question_id) references question(question_id), foreign key (category_id) references category(category_id))
+--alter table answer add votes int null
 
 -- Adminer 4.7.1 MySQL dump
 
@@ -15,6 +16,7 @@ CREATE TABLE `answer` (
   `answer_id` int(11) NOT NULL,
   `answer` longtext NOT NULL,
   `question_id` int(11) NOT NULL,
+  `votes` int(11) DEFAULT NULL,
   PRIMARY KEY (`answer_id`),
   KEY `question_id` (`question_id`),
   CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`)
@@ -48,4 +50,4 @@ CREATE TABLE `question_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
--- 2019-02-19 19:09:40
+-- 2019-02-19 19:19:19
