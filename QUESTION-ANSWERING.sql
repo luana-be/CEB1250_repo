@@ -20,7 +20,7 @@ CREATE TABLE `answer` (
   PRIMARY KEY (`answer_id`),
   KEY `question_id` (`question_id`),
   CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `category`;
@@ -28,7 +28,7 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category` varchar(100) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `question`;
@@ -36,7 +36,7 @@ CREATE TABLE `question` (
   `question_id` int(11) NOT NULL,
   `question` longtext NOT NULL,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `question_category`;
@@ -47,7 +47,7 @@ CREATE TABLE `question_category` (
   KEY `category_id` (`category_id`),
   CONSTRAINT `question_category_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`),
   CONSTRAINT `question_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2019-02-19 19:19:19
+-- 2019-02-19 20:11:08
