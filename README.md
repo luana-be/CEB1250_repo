@@ -15,3 +15,6 @@ DML_IN_DEPTH.sql
 
 #DB design questions (https://moodle.concordia.ca/moodle/pluginfile.php/3527350/mod_resource/content/1/CEBD%20-%20Big%20Data%20Storage%20class%204.pdf)
 UNIVERSITY.sql
+
+#DB definition for the project "question-answering"
+QUESTION-ANSWERING.sql
