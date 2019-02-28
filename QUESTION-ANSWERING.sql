@@ -3,6 +3,8 @@
 --create table category (category_id int not null, category varchar(100) not null, primary key(category_id))
 --create table question_category (question_id int not null, category_id int not null, foreign key (question_id) references question(question_id), foreign key (category_id) references category(category_id))
 --alter table answer add votes int null
+--alter table question add date datetime not null
+--alter table answer add date datetime not null
 
 -- Adminer 4.7.1 MySQL dump
 
@@ -17,6 +19,7 @@ CREATE TABLE `answer` (
   `answer` longtext NOT NULL,
   `question_id` int(11) NOT NULL,
   `votes` int(11) DEFAULT NULL,
+  `date` datetime NOT NULL,
   PRIMARY KEY (`answer_id`),
   KEY `question_id` (`question_id`),
   CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`)
@@ -35,6 +38,7 @@ DROP TABLE IF EXISTS `question`;
 CREATE TABLE `question` (
   `question_id` int(11) NOT NULL,
   `question` longtext NOT NULL,
+  `date` datetime NOT NULL,
   PRIMARY KEY (`question_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -50,4 +54,4 @@ CREATE TABLE `question_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2019-02-19 20:11:08
+-- 2019-02-28 19:42:21
