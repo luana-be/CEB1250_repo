@@ -17,5 +17,4 @@ DML_IN_DEPTH.sql
 UNIVERSITY.sql
 
 #DB definition for the project "question-answering" -> 
-Question-Answering.pdf and QUESTION-ANSWERING.sql
-
+Question-Answering.docx, DatabaseDesignDocument_Luana.docx and QUESTION-ANSWERING.sql
