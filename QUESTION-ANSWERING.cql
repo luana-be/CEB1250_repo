@@ -21,5 +21,6 @@ select * from question_answering.question_with_categories where category='all' A
 select * from question_answering.question_with_categories where question='what is a question';
 
 insert into question_answering.question_with_answers(id, question, answer, answer_date, answer_votes) values (now(), 'what is a question', 'question is something that needs an answer', toTimestamp(now()), 0);
+insert into question_answering.question_with_answers(id, question, answer, answer_date, answer_votes) values (now(), 'what is a question', 'question is something that you ask', toTimestamp(now()), 0);
 
 select * from question_answering.question_with_answers;
