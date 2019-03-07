@@ -6,16 +6,7 @@ create keyspace question_answering with replication = {'class':'SimpleStrategy',
 
 use question_answering;
 
-create table question (question_id int, question text, primary key (question_id));
+create type question (question text, question_date timestamp, category text);
+create type answer (answer text, answer_date timestamp, votes int);
 
-create table answer (answer_id int, question_id int, answer text, primary key (answer_id, question_id)) with clustering order by (question_id asc);
-
-create table category (category_id int, category text, primary key(category_id));
-
-create table question_category (question_id int, category_id int, primary key (category_id, question_id));
-
-alter table answer add votes int;
-alter table question add date timestamp;
-alter table answer add date timestamp;
-
-alter table question_answering.question_category add category text; -- this way, we don't need to access the table category in order to get the category names
+create table question_with_answers (id UUID, question frozen<question>, answer frozen<answer>, primary key (question, answer));
