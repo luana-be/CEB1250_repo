@@ -18,3 +18,6 @@ UNIVERSITY.sql
 
 #DB definition for the project "question-answering" -> 
 Question-Answering.docx, DatabaseDesignDocument_Luana.docx and QUESTION-ANSWERING.sql
+
+#Cassandra CQL script for the project "question-answering" -> 
+QUESTION-ANSWERING.cql
