@@ -1,0 +1,64 @@
+/*
+mongod 
+mongo
+*/
+
+use question_answering
+db.question_answer_pairs.drop()
+db.createCollection("question_answer_pairs")
+
+db.question_answer_pairs.insertOne(
+	{
+		question: "",
+		question_date: "",
+		question_categories: [""],
+		answer: "",
+		answer_date: "",
+		answer_votes: null
+	}
+)
+
+db.question_answer_pairs.find({})
+
+db.question_answer_pairs.updateOne(
+	{ question: ""},
+	{ $set:
+		{	
+			question: "What is F1",
+			question_date: new Date(),
+			question_categories: ["all"]
+		}
+	},
+	{ upsert: true }
+)
+
+db.question_answer_pairs.find({})
+
+//adding a first answer
+db.question_answer_pairs.updateOne(
+	{ question: "What is F1" },
+	{ $set:
+		{
+			answer: "F1 is a sport",
+			answer_date: new Date(),
+			answer_votes: 0
+		}
+	},
+	{ upsert: true }
+)
+
+db.question_answer_pairs.find({})
+
+//adding a second answer (a new record, in our case; note that we use now the "insertOne" function)
+db.question_answer_pairs.insertOne(
+	{
+		question: "What is F1",
+		question_date: new Date(),
+		question_categories: ["all", "computers"],
+		answer: "F1 is a function key",
+		answer_date: new Date(),
+		answer_votes: 0
+	}
+)
+
+db.question_answer_pairs.find({})
