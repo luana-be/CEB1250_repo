@@ -17,7 +17,12 @@ DML_IN_DEPTH.sql
 UNIVERSITY.sql
 
 #DB definition for the project "question-answering" -> 
-Question-Answering.docx, DatabaseDesignDocument_Luana.docx and QUESTION-ANSWERING.sql
+Question-Answering.docx, DatabaseDesignDocument_Luana.docx, QUESTION-ANSWERING.sql
 
-#Cassandra CQL script for the project "question-answering" -> 
-QUESTION-ANSWERING.cql
+#Cassandra CQL script and db-connector for the project "question-answering" -> 
+QUESTION-ANSWERING.cql, cassandra_connector.ipynb
+
+#Mongodb script and Mongodb+Elasticsearch db-connectors for the project "question-answering" -> 
+QUESTION-ANSWERING.mongo, mongo_connector.ipynb, elastic_connector.ipynb, elastic_mongo_connector.ipynb
+
+#Final project source code
