@@ -24,5 +24,3 @@ QUESTION-ANSWERING.cql, cassandra_connector.ipynb
 
 #Mongodb script and Mongodb+Elasticsearch db-connectors for the project "question-answering" -> 
 QUESTION-ANSWERING.mongo, mongo_connector.ipynb, elastic_connector.ipynb, elastic_mongo_connector.ipynb
-
-#Final project source code
